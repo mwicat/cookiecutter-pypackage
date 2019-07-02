@@ -11,11 +11,17 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [{%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=6.0',{%- endif %} ]
+requirements = [
+    {%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=6.0',{%- endif %}
+]
 
-setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %} ]
+setup_requirements = [
+    {%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %}
+]
 
-test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest',{%- endif %} ]
+test_requirements = [
+    {%- if cookiecutter.use_pytest == 'y' %}'pytest',{%- endif %}
+]
 
 {%- set license_classifiers = {
     'MIT license': 'License :: OSI Approved :: MIT License',
